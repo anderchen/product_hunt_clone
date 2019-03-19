@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  skip_before_action :authentication_user!, only: :index
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @product = Product.all
+    @products = Product.all
   end
 end
